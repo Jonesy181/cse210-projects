@@ -1,25 +1,61 @@
 class Scripture
 {
     List<Word> _words;
-    // TODO: Add scripture reference
+    private ScriptureReference _reference;
 
     public Scripture(string bookName, int chapter, int verse, string text)
     {
-        // TODO: Add scripture reference here. Use bookName, chapter, and verse to create scripture reference
+        _reference = new ScriptureReference(bookName, chapter, verse);
         _words = ConvertToWords(text);
     }
 
      public Scripture(string bookName, int chapter, int startVerse, int endVerse, string text)
     {
-        // TODO
+        _reference = new ScriptureReference(bookName, chapter, startVerse, endVerse);
+        _words = ConvertToWords(text);
     }
 
     public void ShowScripture()
     {
+        _reference.DisplayScriptureReference();
+        Console.WriteLine();
+
         foreach(Word word in _words)
         {
             word.Display();
         }
+
+        Console.WriteLine();
+    }
+
+    public void HideRandomWords(int numberToHide)
+    {
+        Random random = new Random();
+        int wordsHidden = 0;
+
+        while (wordsHidden < numberToHide && !IsCompletelyHidden())
+        {
+            int index = random.Next(_words.Count);
+
+            if (!_words[index].IsHidden())
+            {
+                _words[index].Hide();
+                wordsHidden++;
+            }
+        }
+    }
+
+    public bool IsCompletelyHidden()
+    {
+        foreach (Word word in _words)
+        {
+            if (!word.IsHidden())
+            {
+                return false;
+            }
+        }
+
+        return true;
     }
 
     private List<Word> ConvertToWords(string text)
