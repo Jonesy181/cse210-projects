@@ -250,5 +250,18 @@
             "stopAtEntry": false
         },
 
+        {
+            "name": "Person Project",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build-sandbox-Person",
+            "program": "${workspaceFolder}/sandbox/Person/bin/Debug/net10.0/Person.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}/sandbox/Person",
+            "console": "integratedTerminal",
+            "internalConsoleOptions": "neverOpen",
+            "stopAtEntry": false
+        },
+
     ]
 }

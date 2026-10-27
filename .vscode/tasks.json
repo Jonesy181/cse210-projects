@@ -250,5 +250,18 @@
             "problemMatcher": "$msCompile"
         },
 
+        {
+            "label": "build-sandbox-Person",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "build",
+                "${workspaceFolder}/sandbox/Person/Person.csproj",
+                "/property:GenerateFullPaths=true",
+                "/consoleloggerparameters:NoSummary"
+            ],
+            "problemMatcher": "$msCompile"
+        },
+
     ]
 }
