@@ -25,7 +25,6 @@ class BaseActivity
         Console.Write($"{message} ");
         DateTime endTime = DateTime.Now.AddSeconds(seconds);
 
-        //for(int i=0; i < seconds; i++)
         while (DateTime.Now < endTime)
         {
             Console.Write("+");
