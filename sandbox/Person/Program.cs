@@ -1,5 +1,20 @@
 ﻿class Program
 {
+    static void DisplayPersonInformation(Person person)
+    {
+        if (person is Doctor d)
+        {
+            Console.WriteLine(d.GetDoctorInformation());
+        }
+        else if (person is Police p)
+        {
+            Console.WriteLine(p.GetPoliceInformation());
+        }
+        else
+        {
+            Console.WriteLine(person.GetPersonInformation());
+        }
+    }
     static void Main()
     {
         Person myPerson = new Person("Bob", "Floyd", 56, 238);
@@ -18,7 +33,8 @@
 
         foreach(Person person in myPeople)
         {
-            Console.WriteLine(person.GetPersonInformation());
+            DisplayPersonInformation(person);
+            //Console.WriteLine(person.GetPersonInformation());
         }
     }
 }
