@@ -2,18 +2,18 @@
 {
     static void DisplayPersonInformation(Person person)
     {
-        if (person is Doctor d)
-        {
-            Console.WriteLine(d.GetDoctorInformation());
-        }
-        else if (person is Police p)
-        {
-            Console.WriteLine(p.GetPoliceInformation());
-        }
-        else
-        {
-            Console.WriteLine(person.GetPersonInformation());
-        }
+        // if (person is Doctor d)
+        // {
+        //     Console.WriteLine(d.GetDoctorInformation());
+        // }
+        // else if (person is Police p)
+        // {
+        //     Console.WriteLine(p.GetPoliceInformation());
+        // }
+        // else
+        // {
+         Console.WriteLine(person.GetPersonInformation());
+        
     }
     static void Main()
     {
@@ -21,10 +21,10 @@
         Console.WriteLine(myPerson.GetPersonInformation());
 
         Police myPolice = new Police("Lance", "Bob", 34, 186, "Taser");
-        Console.WriteLine(myPolice.GetPoliceInformation());
+        //Console.WriteLine(myPolice.GetPoliceInformation());
 
         Doctor myDoctor = new Doctor("Billy", "Payne", 20, 150, "Knife");
-        Console.WriteLine(myDoctor.GetDoctorInformation());
+        //Console.WriteLine(myDoctor.GetDoctorInformation());
 
         List<Person> myPeople = new List<Person>();
         myPeople.Add(myPerson);
@@ -36,5 +36,5 @@
             DisplayPersonInformation(person);
             //Console.WriteLine(person.GetPersonInformation());
         }
-    }
+    } 
 }
