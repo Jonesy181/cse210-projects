@@ -59,5 +59,10 @@ abstract class BaseGoal
     }
 
     public abstract int RecordEvent();
+
+    protected int GetPoints()
+    {
+        return _points;
+    }
     
 }
