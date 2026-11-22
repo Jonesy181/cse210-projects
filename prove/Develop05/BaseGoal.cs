@@ -65,4 +65,13 @@ abstract class BaseGoal
         return _points;
     }
     
+    public virtual string GetSaveData()
+    {
+        return string.Join("|",
+            _goalType,
+            System.Uri.EscapeDataString(_name),
+            System.Uri.EscapeDataString(_description),
+            _points,
+            _status);
+    }
 }
